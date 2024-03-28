@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://f7no37jnwqye"]
+
+[ext_resource type="Script" path="res://Menu/Menu.gd" id="1_www1b"]
+[ext_resource type="Script" path="res://Menu/details.gd" id="2_dlhsj"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_www1b")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 237.0
+offset_top = 27.0
+offset_right = 517.0
+offset_bottom = 130.0
+text = "Play"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 231.0
+offset_right = 429.0
+offset_bottom = 437.0
+text = "Quit"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 195.0
+offset_bottom = 112.0
+text = "details"
+script = ExtResource("2_dlhsj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1221.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 0)
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

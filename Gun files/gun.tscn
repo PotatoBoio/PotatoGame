@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dm2lej8qry7t8"]
+
+[ext_resource type="Texture2D" uid="uid://bsoy61ktc263v" path="res://Gun files/Gun.png" id="2_7xve4"]
+[ext_resource type="Script" path="res://Gun files/gun.gd" id="2_bnfpt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qawg"]
+atlas = ExtResource("2_7xve4")
+region = Rect2(0, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scacv"]
+atlas = ExtResource("2_7xve4")
+region = Rect2(45, 0, 45, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_77odp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qawg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scacv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="It\'s  gun" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_77odp")
+frame_progress = 0.138724
+script = ExtResource("2_bnfpt")
