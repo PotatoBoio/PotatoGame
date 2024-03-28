@@ -1,7 +1,6 @@
 extends RichTextLabel
 #wvar state = 0
 var word:int = 0
-var passing = "yuh"
 var lock = false
 
 func _ready():
