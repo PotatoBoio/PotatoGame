@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://domw2s77cfo8r"]
+
+[ext_resource type="Script" path="res://Gun files/Bullet/bulletvelocity.gd" id="1_ktenv"]
+[ext_resource type="Texture2D" uid="uid://ciuyfr1bd8qr8" path="res://Gun files/Bullet/bullet.png" id="2_g80w4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gh3be"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(-1, 0)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_ktenv")
+
+[node name="Bullet" type="Sprite2D" parent="."]
+light_mask = 7
+visibility_layer = 7
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_g80w4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gh3be")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

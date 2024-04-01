@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://kfuny3328j6o"]
+
+[ext_resource type="Texture2D" uid="uid://csnl4fn1wd3xp" path="res://sign.png" id="1_3idyd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgj0u"]
+size = Vector2(26.75, 26.0833)
+
+[node name="NPC" type="Area2D"]
+
+[node name="NPC Skin" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_3idyd")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, -1.25)
+scale = Vector2(3.5, 3.5)
+shape = SubResource("RectangleShape2D_mgj0u")

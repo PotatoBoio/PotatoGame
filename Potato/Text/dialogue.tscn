@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5doyko1muwur"]
+
+[ext_resource type="Texture2D" uid="uid://demngn7h772al" path="res://Text/Nother background.png" id="1_ue3vs"]
+[ext_resource type="Script" path="res://Text/dialogue.gd" id="2_76sxl"]
+[ext_resource type="Texture2D" uid="uid://b7y4ryvny6tl2" path="res://icon.svg" id="3_hipc8"]
+
+[node name="Background" type="TextureRect"]
+offset_left = 75.0
+offset_top = 50.0
+offset_right = 1075.0
+offset_bottom = 250.0
+texture = ExtResource("1_ue3vs")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visibility_layer = 524289
+layout_mode = 0
+offset_left = 349.0
+offset_top = 93.0
+offset_right = 928.0
+offset_bottom = 168.0
+theme_override_font_sizes/normal_font_size = 30
+script = ExtResource("2_76sxl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(157, 100)
+texture = ExtResource("3_hipc8")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Timer" to="RichTextLabel" method="_on_timer_timeout"]

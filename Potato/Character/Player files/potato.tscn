@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://btke5kntnwcyq"]
+
+[ext_resource type="Script" path="res://Character/Player files/potato.gd" id="1_vpx6y"]
+[ext_resource type="Texture2D" uid="uid://k1gj55puv7fp" path="res://Character/potato.png" id="1_wuepk"]
+[ext_resource type="PackedScene" uid="uid://dm2lej8qry7t8" path="res://Gun files/gun.tscn" id="3_joirv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5g0k6"]
+radius = 5.0
+height = 38.0
+
+[node name="Potato" type="CharacterBody2D"]
+script = ExtResource("1_vpx6y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wuepk")
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(7, -6, 16, 1, 18, 15, 6, 21, -18, 20, -25, 13, -27, 4, -27, 0, -23, -4, -12, -11, -2, -10)
+
+[node name="Gun" parent="." instance=ExtResource("3_joirv")]
+position = Vector2(25, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, 10)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5g0k6")
+
+[node name="bulletlocation" type="Marker2D" parent="."]
+position = Vector2(62, 9)
